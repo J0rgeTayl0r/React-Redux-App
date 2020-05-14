@@ -1,6 +1,6 @@
-import { FETCH_JOB_START, FETCH_JOB_SUCCESS, FETCH_JOB_FAIL } from "../actions";
+import { FETCH_JOB_SUCCESS, FETCH_JOB_FAIL, FETCH_JOB_START } from "../actions";
 
-//INITIAL STATE, NO JOBS, FETCHING IS FALSE, AND NO ERROR
+
 const initialState = {
   jobs: [],
   isFetching: false,
@@ -9,14 +9,14 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    //START THE JOB FETCH
+   
     case FETCH_JOB_START:
       return {
         ...state,
         isFetching: true,
         error: "",
       };
-    //WHEN THE JOB FETCH SUCCESSFULLY RUNS
+    
     case FETCH_JOB_SUCCESS:
       return {
         ...state,
@@ -24,7 +24,7 @@ export const reducer = (state = initialState, action) => {
         isFetching: false,
         error: "",
       };
-    //IF THE JOB FETCH FAILS
+
     case FETCH_JOB_FAIL:
       return {
         ...state,
